@@ -72,7 +72,7 @@ The **`.terraform.d/plugins`** directory is where Terraform stores provider plug
 - **Custom Plugins:** You can manually add custom provider binaries here if needed for specific configurations.
 
 This folder ensures that Terraform has the necessary tools to interact with your chosen infrastructure providers.
-# Example: AWS Provider Configuration
+### Example: AWS Provider Configuration
 
 To use AWS as your cloud provider in Terraform, you must configure the AWS provider. Here’s a basic example:
 
