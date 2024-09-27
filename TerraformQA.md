@@ -732,5 +732,10 @@ $ terraform import aws_instance.example i-1234567890abcdef0
 - **Adopt Existing Infrastructure**: When you have existing infrastructure created manually or through other tools that you now want Terraform to manage without recreating it.
 - **Migration to Terraform**: Import existing resources during a migration to a fully Terraform-managed infrastructure.
 
+# Q. Structural Data Types.
+A structural type allows multiple values of several distinct types to be grouped together 
+as a single value.
+List contains multiple values of the same type while objects can contain multiple values 
+of different types.
 
-
+## collect again important questios like state file and locking system etc also refer first pdf.
