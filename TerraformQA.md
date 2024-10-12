@@ -738,4 +738,61 @@ as a single value.
 List contains multiple values of the same type while objects can contain multiple values 
 of different types.
 
-## collect again important questios like state file and locking system etc also refer first pdf.
+
+# Q. State Locking for Multiple Environments in Terraform
+
+In your scenario where you have two environments, **production** and **dev**, each with its own state file, you can use a **single DynamoDB table** for state locking across both environments. The locking mechanism will depend on the **key (LockID)** used by Terraform for each state file.
+
+## How Terraform State Locking Works with Multiple Environments
+
+- **DynamoDB Locking**: When using DynamoDB for state locking, Terraform uses a unique **LockID** for each state file. The LockID typically corresponds to the **key** or **path** used in the S3 bucket (or other backend). This means that different state files (e.g., one for production and one for dev) will have different LockIDs.
+  
+- **State Isolation**: Since the state files for `production` and `dev` are separate, each environment has its own unique state, and Terraform will manage locks separately for each environment, even when using the same DynamoDB table.
+
+## Configuration for Two Environments with One DynamoDB Table
+
+You can use a single **DynamoDB table** to manage state locking for both `production` and `dev` environments.
+
+### S3 Bucket for State
+- Each environment (production and dev) will have a separate state file in the S3 bucket.
+- Example: 
+  - `production` state file: `s3://my-terraform-state/production/terraform.tfstate`
+  - `dev` state file: `s3://my-terraform-state/dev/terraform.tfstate`
+
+### DynamoDB Table for Locking
+- Both environments will use the same DynamoDB table for locking.
+- Each environment's state file will have a different **LockID** in DynamoDB, so locks for production and dev will be independent of each other.
+
+## Example Terraform Configuration for Both Environments
+
+### `production` Environment:
+```hcl
+terraform {
+  backend "s3" {
+    bucket         = "my-terraform-state"
+    key            = "production/terraform.tfstate"
+    region         = "us-west-2"
+    encrypt        = true
+    dynamodb_table = "terraform-lock-table"
+  }
+}
+```
+### `dev` Environment:
+```hcl
+terraform {
+  backend "s3" {
+    bucket         = "my-terraform-state"
+    key            = "dev/terraform.tfstate"
+    region         = "us-west-2"
+    encrypt        = true
+    dynamodb_table = "terraform-lock-table"
+  }
+}
+```
+In both environments:
+- The same DynamoDB table (`terraform-lock-table`) is used for state locking.
+- The key for each state file is different (`production/terraform.tfstate` vs `dev/terraform.tfstate`), so they will have unique LockIDs in `DynamoDB`.
+
+### How Locking Works with a Single DynamoDB Table
+- **LockID**: The LockID in DynamoDB is generated based on the `key` (S3 path) of the state file. Since production and dev have different state file paths, they will have different LockIDs in the DynamoDB table.
+- **Independent Locking**: Because the LockIDs are unique for each environment, there won’t be any contention between the two environments when they both attempt to lock state. This allows both environments to run Terraform operations concurrently without interfering with each other.
