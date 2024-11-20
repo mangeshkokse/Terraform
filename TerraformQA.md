@@ -798,4 +798,3 @@ In both environments:
 - **Independent Locking**: Because the LockIDs are unique for each environment, there won’t be any contention between the two environments when they both attempt to lock state. This allows both environments to run Terraform operations concurrently without interfering with each other.
 
 
-#### How to managing multicloud Envirenments in terraform 
