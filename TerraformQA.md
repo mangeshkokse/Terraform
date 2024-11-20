@@ -797,4 +797,6 @@ In both environments:
 - **LockID**: The LockID in DynamoDB is generated based on the `key` (S3 path) of the state file. Since production and dev have different state file paths, they will have different LockIDs in the DynamoDB table.
 - **Independent Locking**: Because the LockIDs are unique for each environment, there won’t be any contention between the two environments when they both attempt to lock state. This allows both environments to run Terraform operations concurrently without interfering with each other.
 
+# Questions Answers 
+## https://chatgpt.com/share/673bfbe8-2a28-8006-bab4-6cd3d4707188
 
