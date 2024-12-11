@@ -10,7 +10,7 @@ Terraform docks and notes
 2. providers and multiprovider 
 3. versions ( cli, provider, module )
 4. terraform file straucture 
-5m. veriables
+5. veriables
 6. output file 
 7. state file and statefile management
 8. modules 
