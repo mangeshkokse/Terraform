@@ -29,6 +29,7 @@ Terraform docks and notes
 21. terraform import 
 22. user_data in terraform
 23. depends on metadata 
+24. what is terraform.tfvars -- envirenment specific veriables store 
 
 ```yaml
 terraform-eks/
