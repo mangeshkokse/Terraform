@@ -28,4 +28,32 @@ Terraform docks and notes
 20. template 
 21. terraform import 
 22. user_data in terraform 
+
+
+terraform-eks/
+├── modules/
+│   ├── vpc/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   ├── outputs.tf
+│   ├── eks/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   ├── outputs.tf
+│   │   ├── data.tf
+│   ├── s3-backend/
+│   │   ├── backend.tf
+├── environments/
+│   ├── dev/
+│   │   ├── main.tf
+│   │   ├── terraform.tfvars
+│   ├── prod/
+│   │   ├── main.tf
+│   │   ├── terraform.tfvars
+├── providers.tf
+├── variables.tf
+├── backend.tf
+├── outputs.tf
+├── versions.tf
+
 23. depends on metadata 
