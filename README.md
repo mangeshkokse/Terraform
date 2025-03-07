@@ -27,9 +27,10 @@ Terraform docks and notes
 19. how to upgrade terraform 
 20. template 
 21. terraform import 
-22. user_data in terraform 
+22. user_data in terraform
+23. depends on metadata 
 
-
+```yaml
 terraform-eks/
 ├── modules/
 │   ├── vpc/
@@ -56,4 +57,4 @@ terraform-eks/
 ├── outputs.tf
 ├── versions.tf
 
-23. depends on metadata 
+```
