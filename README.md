@@ -7,34 +7,34 @@ Terraform docks and notes
 
 ## Topic to learn 
 1. terrafom intialisation and configuration
-2. providers and multiprovider 
-Q. What is alias in provider
-3. versions ( cli, provider, module )
-Q  what is the binary in terrform version
-Q  what is Terraform Registry.
-4. terraform file straucture 
-Q  what is .terraform.lock.hcl  # Dependency lock file
-5. veriables
-Q  Diff betn veriables.tf and terraform.tfvars
-6. output file 
-7. state file and statefile management
-8. How to Unlock Terraform State? If in any condition it get lock. -  terraform force-unlock <LOCK_ID>
-9. modules 
-10. provisioners
-11. data source 
-12. workspaces 
-13. functions 
-14. lifecycle rules 
-15. loop, count and for_each
-16. Dynamic blocks 
-17. secrets and secreats management 
-18. what is terragraunt 
-19. debugging and validations 
-20. how to upgrade terraform 
-21. template 
-22. terraform import 
-23. user_data in terraform
-24. depends on metadata
+2. providers and multiprovider
+3. What is alias in provider
+4. versions ( cli, provider, module )
+5. what is the binary in terrform version
+6. what is Terraform Registry.
+7. terraform file straucture
+8. what is .terraform.lock.hcl  # Dependency lock file
+9. veriables
+10. Diff betn veriables.tf and terraform.tfvars
+11. output file 
+12. state file and statefile management
+13. How to Unlock Terraform State? If in any condition it get lock. -  terraform force-unlock <LOCK_ID>
+14. modules 
+15. provisioners
+16. data source 
+17. workspaces 
+18. functions 
+19. lifecycle rules 
+20. loop, count and for_each
+21. Dynamic blocks 
+22. secrets and secreats management 
+23. what is terragraunt 
+24. debugging and validations 
+25. how to upgrade terraform 
+26. template 
+27. terraform import 
+28. user_data in terraform
+29. depends on metadata
     
 ```yaml
 terraform-eks/
