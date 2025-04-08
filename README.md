@@ -19,22 +19,23 @@ Terraform docks and notes
 11. output file 
 12. state file and statefile management
 13. How to Unlock Terraform State? If in any condition it get lock. -  terraform force-unlock <LOCK_ID>
-14. modules 
-15. provisioners
-16. data source 
-17. workspaces 
-18. functions 
-19. lifecycle rules 
-20. loop, count and for_each
-21. Dynamic blocks 
-22. secrets and secreats management 
-23. what is terragraunt 
-24. debugging and validations 
-25. how to upgrade terraform 
-26. template 
-27. terraform import 
-28. user_data in terraform
-29. depends on metadata
+14. How to Unlock Terraform State in Production (via CI/CD controlled workflows)
+15. modules 
+16. provisioners
+17. data source 
+18. workspaces 
+19. functions 
+20. lifecycle rules 
+21. loop, count and for_each
+22. Dynamic blocks 
+23. secrets and secreats management 
+24. what is terragraunt 
+25. debugging and validations 
+26. how to upgrade terraform 
+27. template 
+28. terraform import 
+29. user_data in terraform
+30. depends on metadata
     
 ```yaml
 terraform-eks/
